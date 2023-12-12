@@ -39,7 +39,6 @@ local function parts()
         if mod.category ~= 'parts'
             or mod.enabled == false
             or modCount == 0
-            or mod.id == 23
         then
             goto continue
         end

@@ -21,7 +21,10 @@ client_scripts {
     'client/zones.lua',
 }
 
-server_script 'server/main.lua'
+server_scripts{
+    '@mysql-async/lib/MySQL.lua',
+    'server/main.lua'
+}
 
 ui_page 'web/index.html'
 

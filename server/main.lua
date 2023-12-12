@@ -66,12 +66,8 @@ lib.callback.register('qbx_customs:server:repair', function(source, bodyHealth)
 end)
 
 local function IsVehicleOwned(plate)
-    local result = exports.oxmysql.scalar_async('SELECT 1 from player_vehicles WHERE plate = ?', {plate})
-    if result then
-        return true
-    else
-        return false
-    end
+    local result = MySQL.Sync.fetchScalar('SELECT 1 from player_vehicles WHERE plate = ?', {plate})
+    return result ~= nil
 end
 
 --Copied from qb-mechanicjob
