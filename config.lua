@@ -30,6 +30,7 @@ Config.Zones = {
 --         }
 --     },
     {
+        job = {'bennys'},
         points = {
             vec3(-224.97, -1314.69, 30.89),
             vec3(-225.63, -1339.28, 30.89),
@@ -38,19 +39,30 @@ Config.Zones = {
         }
     },
     {
-        points = {
-            vec3(-1405.72, -445.51, 34.48),
-            vec3(-1427.71, -460.16, 34.48),
-            vec3(-1434.71, -449.5, 34.48),
-            vec3(-1411.64, -435.57, 34.48),
-        }
-    },
-    {
+        job = {'harmony'},
         points = {
             vec3(1171.9, 2635.58, 37.77),
             vec3(1171.87, 2644.71, 37.77),
             vec3(1189.76, 2644.09, 37.77),
             vec3(1189.77, 2636.05, 37.77),
+        }
+    },
+    {
+        job = {'lscustom'},
+        points = {
+            vec3(-348.78, -139.03, 39.01),
+            vec3(-342.86, -122.93, 39.01),
+            vec3(-319.38, -131.03, 38.99),
+            vec3(-324.74, -148.0, 39.27)
+        }
+    },
+    {
+        job = {'beekersgarage'},
+        points = {
+            vec3(96.74, 6619.63, 31.79),
+            vec3(102.72, 6613.48, 31.79),
+            vec3(116.01, 6625.49, 31.79),
+            vec3(109.59, 6632.11, 31.79),
         }
     },
     {
@@ -469,6 +481,13 @@ Config.PlateIndexes = {
     {id = 3, label = 'Blue on White 2'},
     {id = 4, label = 'Blue on White 3'},
     {id = 5, label = 'Yankton'},
+    {id = 6, label = 'Ecola'},
+    {id = 7, label = 'Las Venturas'},
+    {id = 8, label = 'Liberty City'},
+    {id = 9, label = 'Los Santos Car Meet'},
+    {id = 10, label = 'Los Santos Panic'},
+    {id = 11, label = 'Pounders All-Stars'},
+    {id = 12, label = 'Sprunk'}
 }
 
 Config.Neon = {
