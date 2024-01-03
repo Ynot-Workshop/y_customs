@@ -94,7 +94,7 @@ Config.Mods = {
     {id = 15, label = 'Suspension Upgrade',   category = 'performance'},
     {id = 16, label = 'Armor Upgrade',        category = 'performance', enabled = false},
     {id = 17, label = 'Nitrous',              category = 'performance', enabled = false},
-    {id = 18, label = 'Turbo Upgrade', category = 'performance'},
+    {id = 18, label = 'Turbo Upgrade',        category = 'performance'},
     {id = 19, label = 'Subwoofer',            category = 'parts'},
     -- {id = 20, label = 'Tyre smoke',                category = 'colors'},
     {id = 21, label = 'Hydraulics',           category = 'parts'},
