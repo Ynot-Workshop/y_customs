@@ -99,7 +99,7 @@ Config.Mods = {
     -- {id = 20, label = 'Tyre smoke',                category = 'colors'},
     {id = 21, label = 'Hydraulics',           category = 'parts'},
     -- {id = 22, label = 'Xenon lights',         category = 'colors'},
-     {id = 23, label = 'Wheels', category = 'parts'},
+    -- {id = 23, label = 'Wheels', category = 'parts'},
     -- {id = 24, label = 'Rear wheels or hydraulics', category = 'parts'},
     {id = 25, label = 'Plate holder',         category = 'parts'},
     {id = 26, label = 'Vanity Plates',        category = 'parts'},
@@ -356,6 +356,7 @@ Config.ModLabels = {
         {id = 1,  label = 'Engine 2'},
         {id = 2,  label = 'Engine 3'},
         {id = 3,  label = 'Engine 4'},
+        {id = 4,  label = 'Engine 5'},
     },
     [12] = { -- Brake
         {id = -1, label = 'Stock'},
@@ -429,6 +430,12 @@ Config.ModLabels = {
         {id = 55, label = 'Air Horn Medium'},
         {id = 56, label = 'Air Horn High Loop'},
         {id = 57, label = 'Air Horn High'},
+        {id = 58, label = 'Sport Loop'},
+        {id = 59, label = 'Sport'},
+        {id = 60, label = 'Short Sport Loop'},
+        {id = 61, label = 'Short Sport'},
+        {id = 62, label = 'Short Loop'},
+
     },
     [15] = { -- Suspension
         {id = -1, label = 'Stock'},
@@ -545,7 +552,7 @@ Config.Wheels = {
 Config.Prices = {
     ['cosmetic'] = 500,
     ['colors'] = 1000,
-    [11] = {0, 10000, 20000, 30000, 40000},     -- Engine
+    [11] = {0, 10000, 20000, 30000, 40000, 55000},     -- Engine
     [12] = {0, 2500, 5000, 7500},               -- Brakes
     [13] = {0, 5000, 10000, 15000, 20000},      -- Transmission
     [15] = {0, 3000, 6000, 9000, 12000, 15000}, -- Suspension
