@@ -11,11 +11,11 @@ shared_scripts {
     '@qbx_core/shared/locale.lua',
     'locales/en.lua',
     'locales/*.lua',
-    'config.lua'
 }
 
 client_scripts {
     '@qbx_core/modules/playerdata.lua',
+    '@qbx_core/modules/lib.lua',
     'client/utils.lua',
     'client/menus/main.lua',
     'client/zones.lua',
@@ -26,11 +26,9 @@ server_scripts{
     'server/main.lua'
 }
 
-ui_page 'web/index.html'
-
 files {
+    'config/*.lua',
     'client/**/*.lua',
-    'web/**/*',
     'carcols_gen9.meta',
     'carmodcols_gen9.meta',
 }
