@@ -50,12 +50,12 @@ local menu = {
     options = {},
 }
 
-local function onSubmit(selected, scrollIndex, args)
+local function onSubmit(selected, scrollIndex)
     local option = menu.options[selected]
     local duplicate = option.ids[scrollIndex] == originalPaint[primaryPaint and 'primary' or 'secondary']
 
     local success = InstallMod(duplicate, 'colors', {
-        description = Lang:t('menus.general.applied', {element = option.values[scrollIndex]}),
+        description = locale('menus.general.applied', option.values[scrollIndex]),
         icon = 'fas fa-paint-brush',
     })
 
@@ -65,12 +65,12 @@ local function onSubmit(selected, scrollIndex, args)
     lib.showMenu('customs-paint', lastIndex)
 end
 
-menu.onClose = function(keyPressed)
+menu.onClose = function()
     SetVehicleColours(vehicle, originalPaint.primary, originalPaint.secondary)
-    lib.showMenu('customs-colors', colorsLastIndex)
+    lib.showMenu('customs-colors', ColorsLastIndex)
 end
 
-menu.onSelected = function(selected, secondary, args)
+menu.onSelected = function(selected)
     PlaySoundFrontend(-1, 'NAV_UP_DOWN', 'HUD_FRONTEND_DEFAULT_SOUNDSET', true)
     lastIndex = selected
 end
@@ -89,7 +89,7 @@ end
 return function(primary)
     primaryPaint = primary
     menu.options = paintMods()
-    menu.title = primaryPaint and Lang:t('menus.paint.primary') or Lang:t('menus.paint.secondary')
+    menu.title = primaryPaint and locale('menus.paint.primary') or locale('menus.paint.secondary')
     lib.registerMenu(menu, onSubmit)
     return menu.id
 end
