@@ -8,9 +8,7 @@ version '1.0.0'
 
 ox_lib 'locale'
 
-shared_scripts {
-    '@ox_lib/init.lua',
-}
+shared_script '@ox_lib/init.lua'
 
 client_scripts {
     '@qbx_core/modules/playerdata.lua',
@@ -20,8 +18,8 @@ client_scripts {
     'client/zones.lua',
 }
 
-server_scripts{
-    '@mysql-async/lib/MySQL.lua',
+server_scripts {
+    '@oxmysql/lib/MySQL.lua',
     'server/main.lua'
 }
 

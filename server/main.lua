@@ -68,8 +68,12 @@ lib.callback.register('qbx_customs:server:repair', function(source, bodyHealth)
 end)
 
 local function IsVehicleOwned(plate)
-    local result = MySQL.Sync.fetchScalar('SELECT 1 from player_vehicles WHERE plate = ?', {plate})
-    return result ~= nil
+    local result = MySQL.scalar.await('SELECT 1 from player_vehicles WHERE plate = ?', {plate})
+    if result then
+        return true
+    else
+        return false
+    end
 end
 
 --Copied from qb-mechanicjob
@@ -77,6 +81,6 @@ RegisterNetEvent('qbx_customs:server:saveVehicleProps', function()
     local src = source --[[@as number]]
     local vehicleProps = lib.callback.await('qbx_customs:client:vehicleProps', src)
     if IsVehicleOwned(vehicleProps.plate) then
-        exports.oxmysql.update('UPDATE player_vehicles SET mods = ? WHERE plate = ?', {json.encode(vehicleProps), vehicleProps.plate})
+        MySQL.update.await('UPDATE player_vehicles SET mods = ? WHERE plate = ?', {json.encode(vehicleProps), vehicleProps.plate})
     end
 end)
