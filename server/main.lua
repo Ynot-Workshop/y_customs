@@ -18,6 +18,11 @@ local function removeMoney(source, amount)
     local cashBalance = player.Functions.GetMoney('cash')
     local bankBalance = player.Functions.GetMoney('bank')
 
+    if not amount then
+        exports.qbx_core:Notify(source, locale('notifications.error.problem', amount), 'success')
+        return false
+    end
+
     if cashBalance >= amount then
         player.Functions.RemoveMoney('cash', amount, locale('general.payReason'))
         return true
