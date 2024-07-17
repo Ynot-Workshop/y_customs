@@ -6,7 +6,8 @@
         },
         "error": {
             "money": "You don't have enough money!",
-            "alreadyInstalled": "You already have this mod installed"
+            "alreadyInstalled": "You already have this mod installed",
+            "problem": "There was a problem with the installation"
         },
         "props": {
             "installTitle": "Customs"
@@ -67,6 +68,10 @@
             "plateIndex": {
                 "title": "Plate Index",
                 "installed": "%s plate installed"
+            },
+            "horns": {
+                "title": "Horns",
+                "installed": "%s horn installed"
             },
             "tyreSmoke": "Tyre smoke",
             "wheelColor": "Wheel color",

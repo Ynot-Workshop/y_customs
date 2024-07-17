@@ -6,7 +6,8 @@
         },
         "error": {
             "money": "Vous n'avez pas assez d'argent !",
-            "alreadyInstalled": "Vous avez déjà installé cette modification"
+            "alreadyInstalled": "Vous avez déjà installé cette modification",
+            "problem": "Il y a eu un problème avec l'installation"
         },
         "props": {
             "installTitle": "Customs"
@@ -67,6 +68,10 @@
             "plateIndex": {
                 "title": "Index de plaque",
                 "installed": "Plaque %s installée"
+            },
+            "horns": {
+                "title": "Klaxon",
+                "installed": "Klaxon %s installé"
             },
             "tyreSmoke": "Fumée de pneus",
             "wheelColor": "Couleur des roues",
