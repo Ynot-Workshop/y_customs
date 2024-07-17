@@ -1,9 +1,9 @@
 fx_version 'cerulean'
 game 'gta5'
 
-author 'Jorn#0008'
-description 'qbx_customs'
-repository 'https://github.com/Qbox-project/qbx_customs'
+author 'Jorn#0008 & Ynot'
+description 'y_customs'
+repository 'https://github.com/TonybynMp4/qbx_customs'
 version '1.0.0'
 
 ox_lib 'locale'

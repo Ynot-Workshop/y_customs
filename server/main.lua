@@ -1,4 +1,4 @@
-lib.versionCheck('Qbox-project/qbx_customs')
+lib.versionCheck('TonybynMp4/y_customs')
 local sharedConfig = require 'config.shared'
 
 ---@return number
