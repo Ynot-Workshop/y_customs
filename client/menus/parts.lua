@@ -2,8 +2,36 @@ local originalMods = {}
 partsLastIndex = 1
 local VehicleClass = require('client.enums.VehicleClass')
 local originalPlateIndex
+local originalHorn
 local config = require 'config.client'
 local sharedConfig = require 'config.shared'
+
+local function horns()
+    originalHorn = GetVehicleMod(vehicle, 14)
+
+    local hornLabels = {}
+    for i, v in ipairs(config.horns) do
+        hornLabels[i] = {label = v.label, arg = v.id}
+    end
+
+    local option = {
+        id = 'horns',
+        label = locale('menus.options.horns.title'),
+        description = ('%s%s'):format(config.currency, sharedConfig.prices['cosmetic']),
+        close = true,
+        values = hornLabels,
+        set = function(index)
+            SetVehicleMod(vehicle, 14, hornLabels[index].arg, false)
+            return originalHorn == hornLabels[index].arg, locale('menus.options.horns.installed', hornLabels[index].label)
+        end,
+        restore = function()
+            SetVehicleMod(vehicle, 14, originalHorn, false)
+        end,
+        defaultIndex = originalHorn + 2,
+    }
+
+    return option
+end
 
 local function plateIndex()
     originalPlateIndex = GetVehicleNumberPlateTextIndex(vehicle)
@@ -41,6 +69,7 @@ local function parts()
         if mod.category ~= 'parts'
             or mod.enabled == false
             or modCount == 0
+            or modCount == 14
             or modCount == 23
         then
             goto continue
@@ -85,6 +114,7 @@ local function parts()
     end
 
     options[#options + 1] = plateIndex()
+    options[#options + 1] = horns()
 
     table.sort(options, function(a, b)
         return a.label < b.label
