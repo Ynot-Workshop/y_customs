@@ -7,25 +7,19 @@ local VehicleClass = require('client.enums.VehicleClass')
 local config = require 'config.client'
 local sharedConfig = require 'config.shared'
 
----@param wheelType WheelType
+---@param wheelType integer
 local function isWheelTypeAllowed(wheelType)
     local class = GetVehicleClass(vehicle)
-    if class == VehicleClass.Cycles then return false end
 
-    if class == VehicleClass.Motorcycles then
-        if wheelType == WheelType.Bike then
-            return true
-        end
+    if (class == VehicleClass.Motorcycles and wheelType ~= WheelType.Bike) or (class ~= VehicleClass.Motorcycles and wheelType == WheelType.Bike) then
         return false
     end
 
-    if class == VehicleClass.OpenWheels then
-        if wheelType == WheelType.OpenWheel then
-            return true
-        end
+    if (class == VehicleClass.OpenWheels and wheelType ~= WheelType.OpenWheel) or (class ~= VehicleClass.OpenWheels and wheelType == WheelType.OpenWheel) then
         return false
     end
-    return true
+
+    return class ~= VehicleClass.Cycles
 end
 
 local function wheels()
@@ -35,7 +29,8 @@ local function wheels()
     originalMod = GetVehicleMod(vehicle, 23)
 
     for _, category in ipairs(config.wheels) do
-        if not isWheelTypeAllowed(category.id) then goto continue end
+        local isAllowed = isWheelTypeAllowed(category.id)
+        if not isAllowed then goto continue end
         SetVehicleWheelType(vehicle, category.id)
         local modCount = GetNumVehicleMods(vehicle, 23)
         local labels = {}
