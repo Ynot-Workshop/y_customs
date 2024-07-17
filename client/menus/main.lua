@@ -17,7 +17,7 @@ local menu = {
 }
 
 local function main()
-    if GetVehicleBodyHealth(vehicle) < 1000.0 then
+    if config.enableRepair and GetVehicleBodyHealth(vehicle) < 1000.0 then
         return {{
             label = locale('menus.main.repair'),
             description = ('%s%d'):format(config.currency, math.ceil(1000 - GetVehicleBodyHealth(vehicle))),
