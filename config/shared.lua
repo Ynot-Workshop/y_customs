@@ -123,7 +123,7 @@ return {
                 "lscustom"
             },
             blip = {
-                label = "Los Santos Custom",
+                label = "Burton Customs",
                 scale = 0.75,
                 color = 0,
                 sprite = 72,
@@ -134,7 +134,71 @@ return {
                 vec3(-319.41, -130.88, 39),
                 vec3(-324.7, -147.77, 39)
             }
-        }
+        },
+        {
+            job = {
+                "lscustom"
+            },
+            blip = {
+                label = "La Mesa Customs",
+                scale = 0.75,
+                color = 0,
+                sprite = 72,
+            },
+            points = {
+                vec3(738.53, -1094.83, 22.0),
+                vec3(724.17, -1092.12, 22.0),
+                vec3(724.96, -1063.42, 22.0),
+                vec3(738.63, -1063.76, 22.0)
+            }
+        },
+        {
+            job = {
+                "lscustom"
+            },
+            blip = {
+                label = "Davis Auto Repairs",
+                scale = 0.75,
+                color = 0,
+                sprite = 72,
+            },
+            points = {
+                vec3(165.97, -1693.84, 30.25),
+                vec3(159.43, -1689.45, 30.25),
+                vec3(174.1, -1671.43, 30.25),
+                vec3(180.22, -1675.94, 30.25)
+            }
+        },
+        {
+        --[[
+            job = {
+                "police",
+                "sheriff"
+            },
+        ]]
+            hideBlip = true,
+            points = {
+                vec3(877.25, -1353.33, 26.33),
+                vec3(877.15, -1347.11, 26.33),
+                vec3(866.55, -1347.14, 26.31),
+                vec3(866.52, -1353.36, 26.31)
+            }
+        },
+        {
+            --[[
+                job = {
+                    "police",
+                    "sheriff"
+                },
+            ]]
+                hideBlip = true,
+                points = {
+                    vec3(-969.85, -2913.74, 13.95),
+                    vec3(-947.44, -2927.31, 13.95),
+                    vec3(-958.37, -2944.31, 13.95),
+                    vec3(-980.18, -2934.41, 13.95)
+                }
+            }
     },
 
     prices = {
