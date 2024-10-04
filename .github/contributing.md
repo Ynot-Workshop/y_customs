@@ -1,4 +1,4 @@
-# Contributing to Qbox
+# Contributing to Ybox
 
 Thank you for taking the time to contribute!
 
@@ -6,17 +6,13 @@ These guidelines will help you help us in the best way possible regardless of yo
 
 Make sure to also read our [Contributor Code of Conduct](./CODE_OF_CONDUCT.md).
 
-If you still have further questions after reading be sure to join the [Qbox Discord server][discord link].
-
 ## Issues
 
 Open a new issue to report a bug or request a new feature or improvement.
 
-If you want to ask a question, issues are not the place to do so. Please join our [Discord server][discord link] and ask over there instead.
-
 Before opening a new issue:
 
-- [Search](https://github.com/issues?q=is%3Aissue+org%3AQbox-Project) for existing issues; maybe someone else already experienced the same problem that you're having! Duplicate issues will be closed.
+- [Search](https://github.com/issues?q=is%3Aissue+org%3AYbox-Project) for existing issues; maybe someone else already experienced the same problem that you're having! Duplicate issues will be closed.
 - Download the latest release of the resource you are opening the issue for to make sure that it wasn't already fixed. Issues that are already fixed are considered invalid and will be closed.
 
 When opening a new issue, make sure to pick the right type of form and fill it out. The more information you provide, the easier it will be for us to work on your new issue. Issues that are invalid or do not follow the correct form may be ignored or even closed.
@@ -32,11 +28,11 @@ You can use your own editor of choice, but we recommend using [VSCode](https://c
 - [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
 - [CfxLua IntelliSense](https://marketplace.visualstudio.com/items?itemName=overextended.cfxlua-vscode)
 
-If you are new to contributing code, you can check out and try to fix issues marked with [`good first issue`](https://github.com/issues?q=is%3Aissue+is%3Aopen+org%3AQbox-Project+label%3A%22good+first+issue%22).
+If you are new to contributing code, you can check out and try to fix issues marked with [`good first issue`](https://github.com/issues?q=is%3Aissue+is%3Aopen+org%3AYbox-Project+label%3A%22good+first+issue%22).
 
-If you want to contribute code but don't know what to do, please check out issues marked with [`help wanted`](https://github.com/issues?q=is%3Aissue+is%3Aopen+org%3AQbox-Project+label%3A%22help+wanted%22) as those are issues that we actually *need* help with.
+If you want to contribute code but don't know what to do, please check out issues marked with [`help wanted`](https://github.com/issues?q=is%3Aissue+is%3Aopen+org%3AYbox-Project+label%3A%22help+wanted%22) as those are issues that we actually *need* help with.
 
-If you want to contribute code unrelated to an existing issue, you should open an issue yourself or ask over on the [Discord server][discord link] to discuss it with our team and ask whether your change is wanted, especially if you are planning on adding new features or large designs.
+If you want to contribute code unrelated to an existing issue, you should open an issue yourself to discuss it before working on it, especially if you are planning on adding new features or large designs.
 
 Before opening a pull request:
 
