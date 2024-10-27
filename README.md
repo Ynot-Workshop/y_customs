@@ -24,6 +24,7 @@ A free-to-use and modify vehicle customization resource forked from [Popcornrp-c
 - Displayed pricing
 - All tire and paint options (including Chameleon)
 - Customize your car (duh)
+- `exports.y_customs:openCustoms()` to open the menu from another resource
 
 # History Lesson
 
