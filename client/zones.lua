@@ -3,31 +3,34 @@ local allowAccess = false
 local sharedConfig = require 'config.shared'
 local openMenu = require('client.menus.main')
 
-local function checkAccess()
+--- Check if the player has access to the zone based on their job and optionally vehicle class and model
+--- @param zone ZoneOptions
+---@param checkVehicle boolean
+---@return boolean
+local function checkAccess(zone, checkVehicle)
     while not cache.vehicle do
         Wait(50)
     end
-    local zone = sharedConfig.zones[zoneId]
-    local vehicleClass = GetVehicleClass(cache.vehicle)
-    local hasJob = true
 
-    if (zone.deniedClasses and zone.deniedClasses[vehicleClass]) or (zone.allowedClasses and not zone.allowedClasses[vehicleClass]) or (zone.modelBlacklist and zone.modelBlacklist[GetEntityModel(cache.vehicle)]) then
-        allowAccess = false
-        return
+    if checkVehicle then
+        local vehicleClass = GetVehicleClass(cache.vehicle)
+
+        if (zone.deniedClasses and zone.deniedClasses[vehicleClass]) or (zone.allowedClasses and not zone.allowedClasses[vehicleClass]) or (zone.modelBlacklist and zone.modelBlacklist[GetEntityModel(cache.vehicle)]) then
+            return false
+        end
     end
 
     if zone.job and QBX?.PlayerData then
-        hasJob = false
         local playerJob = QBX.PlayerData.job.name
         for i = 1, #zone.job do
             if playerJob == zone.job[i] then
-                hasJob = true
-                break
+                return true
             end
         end
     end
 
-    allowAccess = hasJob
+
+    return not zone.job
 end
 
 ---@param vertices vector3[]
@@ -55,7 +58,7 @@ CreateThread(function()
             onEnter = function(s)
                 zoneId = s.id
                 if not cache.seat == -1 then return end
-                checkAccess()
+                allowAccess = checkAccess(v, true)
 
                 if not allowAccess then
                     return
@@ -111,5 +114,6 @@ lib.onCache('vehicle', function(vehicle)
         allowAccess = false
         return
     end
+    allowAccess = checkAccess(sharedConfig.zones[zoneId], true)
     checkAccess()
 end)
