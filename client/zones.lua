@@ -29,6 +29,14 @@ local function checkAccess(zone, checkVehicle)
         end
     end
 
+    if zone.jobTypes and QBX?.PlayerData then
+        local playerJobType = QBX.PlayerData.job.type
+        for i = 1, #zone.jobTypes do
+            if playerJobType == zone.jobTypes[i] then
+                return true
+            end
+        end
+    end
 
     return not zone.job
 end
