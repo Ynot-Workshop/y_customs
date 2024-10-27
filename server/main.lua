@@ -1,4 +1,4 @@
-lib.versionCheck('TonybynMp4/y_customs')
+lib.versionCheck('Ybox-Project/y_customs')
 local sharedConfig = require 'config.shared'
 
 ---@return number
