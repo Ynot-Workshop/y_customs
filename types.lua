@@ -4,6 +4,8 @@
 ---@field color integer -- Blip color
 ---@field label string -- Blip label
 ---@field scale number -- Blip scale
+---@field hide boolean? -- hide the blip
+---@field checkAccess boolean? -- Wether to show the blip to everyone or just allowed players
 
 ---@meta
 ---@class ZoneOptions
@@ -14,5 +16,4 @@
 ---@field allowedClasses table<number, boolean>? -- Array of classes that are allowed to access the zone
 ---@field deniedClasses table<number, boolean>? -- Array of classes that are denied access to the zone
 ---@field modelBlacklist table<number, boolean>? -- Array of vehicle models (hashes) that are denied access to the zone
----@field hideBlip boolean? -- Hide the blip on the map
 ---@field points vector3[] -- Array of points that make up the zone
