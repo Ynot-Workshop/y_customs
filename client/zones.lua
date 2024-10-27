@@ -2,6 +2,7 @@ local zoneId
 local allowAccess = false
 local sharedConfig = require 'config.shared'
 local openMenu = require('client.menus.main')
+local zones = {}
 
 --- Check if the player has access to the zone based on their job and optionally vehicle class and model
 --- @param zone ZoneOptions
@@ -59,9 +60,9 @@ local function calculatePolyzoneCenter(vertices)
     return center
 end
 
-CreateThread(function()
+local function createZones()
     for _, v in ipairs(sharedConfig.zones) do
-        lib.zones.poly({
+        zones[#zones + 1] = lib.zones.poly({
             points = v.points,
             onEnter = function(s)
                 zoneId = s.id
@@ -99,7 +100,8 @@ CreateThread(function()
 
         if not v.blip.hide and v.blip and (not v.blip.checkAccess or checkAccess(v, false)) then
             local center = calculatePolyzoneCenter(v.points)
-            local blip = AddBlipForCoord(center.x, center.y, center.z)
+            zones[#zones].blip = AddBlipForCoord(center.x, center.y, center.z)
+            local blip = zones[#zones].blip
             SetBlipSprite(blip, v.blip.sprite or 72)
             SetBlipColour(blip, v.blip.color or 4)
             SetBlipScale(blip, v.blip.scale or 0.8)
@@ -109,7 +111,15 @@ CreateThread(function()
             EndTextCommandSetBlipName(blip)
         end
     end
-end)
+end
+
+local function clearZones()
+    for _, v in ipairs(zones) do
+        RemoveBlip(v.blip)
+        v:remove()
+    end
+    zones = {}
+end
 
 lib.callback.register('qbx_customs:client:zone', function()
     return zoneId
@@ -123,5 +133,32 @@ lib.onCache('vehicle', function(vehicle)
         return
     end
     allowAccess = checkAccess(sharedConfig.zones[zoneId], true)
-    checkAccess()
+end)
+
+RegisterNetEvent('QBCore:Client:OnJobUpdate', function(job)
+    zoneId = nil
+    allowAccess = false
+    clearZones()
+    Wait(500)
+    createZones()
+end)
+
+AddEventHandler('QBCore:Client:OnPlayerLoaded', createZones)
+
+AddEventHandler('QBCore:Client:OnPlayerUnload', function()
+    zoneId = nil
+    allowAccess = false
+    clearZones()
+end)
+
+AddEventHandler('onResourceStart', function(resource)
+    if resource == GetCurrentResourceName() then
+        createZones()
+    end
+end)
+
+AddEventHandler('onResourceStop', function(resource)
+    if resource == GetCurrentResourceName() then
+        clearZones()
+    end
 end)
