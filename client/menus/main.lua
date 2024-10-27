@@ -69,6 +69,8 @@ local function disableControls()
             Wait(0)
             DisableControlAction(0, 71, true) -- accelerating
             DisableControlAction(0, 72, true) -- decelerating
+            DisableControlAction(0, 106, true) -- mouse vehicle control
+            DisableControlAction(0, 122, true) -- mouse air vehicle control
             for i = 81, 85 do -- radio stuff
                 DisableControlAction(0, i, true)
             end
