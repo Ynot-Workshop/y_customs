@@ -16,6 +16,7 @@ client_scripts {
     'client/utils.lua',
     'client/menus/main.lua',
     'client/zones.lua',
+    'client/main.lua'
 }
 
 server_scripts {

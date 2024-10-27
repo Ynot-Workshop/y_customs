@@ -1,7 +1,7 @@
 local zoneId
 local allowAccess = false
 local sharedConfig = require 'config.shared'
-local openCustoms = require('client.menus.main')
+local openMenu = require('client.menus.main')
 
 local function checkAccess()
     while not cache.vehicle do
@@ -80,8 +80,7 @@ CreateThread(function()
                     end
                     if IsControlJustPressed(0, 38) then
                         SetEntityVelocity(cache.vehicle, 0.0, 0.0, 0.0)
-                        lib.hideTextUI()
-                        openCustoms()
+                        openMenu()
                     end
                 end
             end,

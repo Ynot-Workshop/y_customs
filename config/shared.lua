@@ -2,7 +2,7 @@ return {
     -- If you experience issues with your zones not working, please ensure the Z value of your vec3 points match. Using different heights may cause problems.
     ---@type ZoneOptions[]
     zones = {
-              {
+        {
             hideBlip = false,
             blip = {
                 sprite = 72,
@@ -100,10 +100,10 @@ return {
     prices = {
         ['cosmetic'] = 500,
         ['colors'] = 1000,
-        [11] = {0, 10000, 20000, 30000, 40000},     -- Engine
-        [12] = {0, 2500, 5000, 7500},               -- Brakes
-        [13] = {0, 5000, 10000, 15000, 20000},      -- Transmission
-        [15] = {0, 3000, 6000, 9000, 12000, 15000}, -- Suspension
-        [18] = 25000                                  -- Turbo
+        [11] = { 0, 10000, 20000, 30000, 40000 },   -- Engine
+        [12] = { 0, 2500, 5000, 7500 },             -- Brakes
+        [13] = { 0, 5000, 10000, 15000, 20000 },    -- Transmission
+        [15] = { 0, 3000, 6000, 9000, 12000, 15000 }, -- Suspension
+        [18] = 25000                                -- Turbo
     }
 }

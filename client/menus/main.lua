@@ -119,10 +119,6 @@ end
 menu.onClose = function()
     inMenu = false
     stopDragCam()
-    lib.showTextUI(locale('textUI.tune'), {
-        icon = 'fa-solid fa-car',
-        position = 'left-center',
-    })
     TriggerServerEvent('qbx_customs:server:saveVehicleProps')
 end
 
