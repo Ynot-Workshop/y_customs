@@ -54,7 +54,7 @@ CreateThread(function()
             points = v.points,
             onEnter = function(s)
                 zoneId = s.id
-                if not cache.vehicle then return end
+                if not cache.seat == -1 then return end
                 checkAccess()
 
                 if not allowAccess then
@@ -71,7 +71,7 @@ CreateThread(function()
                 lib.hideTextUI()
             end,
             inside = function()
-                if cache.vehicle and allowAccess then
+                if cache.seat == -1 and allowAccess then
                     if not lib.isTextUIOpen() then
                         lib.showTextUI(locale('textUI.tune'), {
                             icon = 'fa-solid fa-car',
