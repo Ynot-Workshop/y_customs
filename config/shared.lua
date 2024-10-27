@@ -2,203 +2,99 @@ return {
     -- If you experience issues with your zones not working, please ensure the Z value of your vec3 points match. Using different heights may cause problems.
     ---@type ZoneOptions[]
     zones = {
-        --[[
-            These MUST be configured with your own location before using them. The current coordinates are set for MOLO MRPD and Benny's
-            {
-                freeRepair = {'police'},
-                freeMods = {'police'},
-                job = {'police'},
-                hideBlip = true,
-                blip = {
-                    sprite = 72,
-                    color = 38,
-                    scale = 0.8,
-                    label = 'Police Garage',
-                }
-                points = {
-                    vec3(455.15, -991.55, 25.75),
-                    vec3(444.83, -991.55, 25.75),
-                    vec3(444.84, -1000.55, 25.75),
-                    vec3(455.13, -1000.56, 25.75),
-                }
-            },
-            {
-                freeRepair = {'police'},
-                freeMods = {'ambulance'},
-                points = {
-                    vec3(-344.36, -121.92, 38.60),
-                    vec3(-319.43, -130.65, 38.60),
-                    vec3(-324.77, -147.93, 38.60),
-                    vec3(-348.59, -139.1, 38.60),
-                }
-            },
-        ]]
-        {
-            job = {
-                "bennys"
-            },
+              {
+            hideBlip = false,
             blip = {
-                sprite = 446,
-                color = 44,
-                scale = 0.9,
-                label = 'Benny\'s',
-            },
-            points = {
-                vec3(-243.0, -1313.0, 31.0),
-                vec3(-243.0, -1341.35, 31.0),
-                vec3(-229.7, -1341.6, 31.0),
-                vec3(-230.0, -1335.5, 31.0),
-                vec3(-217.75, -1335.5, 31.0),
-                vec3(-217.75, -1332.0, 31.0),
-                vec3(-207.25, -1332.5, 31.0),
-                vec3(-207.0, -1327.5, 31.0),
-                vec3(-195.0, -1327.5, 31.0),
-                vec3(-194.5, -1321.5, 31.0),
-                vec3(-203.5, -1321.5, 31.0),
-                vec3(-203.5, -1311.0, 31.0),
-                vec3(-213.5, -1311.0, 31.0),
-                vec3(-213.5, -1315.5, 31.0),
-                vec3(-217.5, -1319.0, 31.0),
-                vec3(-217.0, -1322.0, 31.0),
-                vec3(-218.5, -1322.0, 31.0),
-                vec3(-218.5, -1319.0, 31.0),
-                vec3(-229.5, -1319.5, 31.0),
-                vec3(-228.8, -1312.75, 31.0),
-                vec3(-231.0, -1324.5, 31.0),
-            }
-        },
-        {
-            job = {
-                "harmony"
-            },
-            blip = {
-                label = "Harmony Repair",
-                scale = 1.25,
-                color = 6,
-                sprite = 402,
-            },
-            points = {
-                vec3(-1405.72, -445.51, 34.48),
-                vec3(-1427.71, -460.16, 34.48),
-                vec3(-1434.71, -449.5, 34.48),
-                vec3(-1411.64, -435.57, 34.48),
-            }
-        },
-        {
-            job = {
-                "harmony"
-            },
-            blip = {
-                label = "Harmony Repair",
-                scale = 1.0,
-                color = 6,
-                sprite = 402,
-            },
-            points = {
-                vec3(1171.9, 2635.58, 37.77),
-                vec3(1171.87, 2644.71, 37.77),
-                vec3(1189.76, 2644.09, 37.77),
-                vec3(1189.77, 2636.05, 37.77),
-            }
-        },
-        {
-            job = {
-                "beekersgarage"
-            },
-            blip = {
-                label = "Beekers Garage",
-                scale = 1.0,
-                color = 6,
-                sprite = 402
-            },
-            points = {
-                vec3(96.74, 6619.63, 31.79),
-                vec3(102.72, 6613.48, 31.79),
-                vec3(116.01, 6625.49, 31.79),
-                vec3(109.59, 6632.11, 31.79),
-            }
-        },
-        {
-            job = {
-                "lscustom"
-            },
-            blip = {
-                label = "Burton Customs",
-                scale = 0.75,
-                color = 0,
                 sprite = 72,
+                color = 3,
+                scale = 0.8,
+                label = 'Los Santos Customs - Vinewood',
             },
             points = {
-                vec3(-349.09, -139.0, 39),
-                vec3(-342.89, -122.48, 39),
-                vec3(-319.41, -130.88, 39),
-                vec3(-324.7, -147.77, 39)
+                vec3(-344.36, -121.92, 38.60),
+                vec3(-319.43, -130.65, 38.60),
+                vec3(-324.77, -147.93, 38.60),
+                vec3(-348.59, -139.1, 38.60),
             }
         },
         {
-            job = {
-                "lscustom"
-            },
+            hideBlip = false,
             blip = {
-                label = "La Mesa Customs",
-                scale = 0.75,
-                color = 0,
                 sprite = 72,
+                color = 3,
+                scale = 0.8,
+                label = 'Los Santos Customs - Airport',
             },
             points = {
-                vec3(738.53, -1094.83, 22.0),
-                vec3(724.17, -1092.12, 22.0),
-                vec3(724.96, -1063.42, 22.0),
-                vec3(738.63, -1063.76, 22.0)
+                vec3(-1147.7, -1990.31, 13.15),
+                vec3(-1171.05, -2013.96, 13.15),
+                vec3(-1158.38, -2026.03, 13.15),
+                vec3(-1139.17, -2007.18, 13.15),
+                vec3(-1144.73, -1992.89, 13.15),
             }
         },
         {
-            job = {
-                "lscustom"
-            },
+            hideBlip = false,
             blip = {
-                label = "Davis Auto Repairs",
-                scale = 0.75,
-                color = 0,
                 sprite = 72,
+                color = 3,
+                scale = 0.8,
+                label = 'Los Santos Customs - East',
             },
             points = {
-                vec3(165.97, -1693.84, 30.25),
-                vec3(159.43, -1689.45, 30.25),
-                vec3(174.1, -1671.43, 30.25),
-                vec3(180.22, -1675.94, 30.25)
+                vec3(724.93, -1092.04, 22.15),
+                vec3(738.52, -1094.83, 22.15),
+                vec3(737.36, -1064.56, 22.15),
+                vec3(724.14, -1063.71, 22.15),
             }
         },
         {
-        --[[
-            job = {
-                "police",
-                "sheriff"
+            hideBlip = false,
+            blip = {
+                sprite = 72,
+                color = 3,
+                scale = 0.8,
+                label = 'Los Santos Customs - Sandy Shores',
             },
-        ]]
-            hideBlip = true,
             points = {
-                vec3(877.25, -1353.33, 26.33),
-                vec3(877.15, -1347.11, 26.33),
-                vec3(866.55, -1347.14, 26.31),
-                vec3(866.52, -1353.36, 26.31)
+                vec3(1172.12, 2644.76, 38.55),
+                vec3(1171.39, 2635.66, 38.55),
+                vec3(1189.77, 2636.08, 38.55),
+                vec3(1189.74, 2644.07, 38.55),
             }
         },
         {
-            --[[
-                job = {
-                    "police",
-                    "sheriff"
-                },
-            ]]
-                hideBlip = true,
-                points = {
-                    vec3(-969.85, -2913.74, 13.95),
-                    vec3(-947.44, -2927.31, 13.95),
-                    vec3(-958.37, -2944.31, 13.95),
-                    vec3(-980.18, -2934.41, 13.95)
-                }
+            hideBlip = false,
+            blip = {
+                sprite = 72,
+                color = 3,
+                scale = 0.8,
+                label = 'Los Santos Customs - Paleto',
+            },
+            points = {
+                vec3(115.55, 6625.32, 31.75),
+                vec3(109.19, 6631.69, 31.75),
+                vec3(97.39, 6620.02, 31.75),
+                vec3(102.72, 6613.48, 31.75),
             }
+        },
+        {
+            hideBlip = false,
+            blip = {
+                sprite = 72,
+                color = 3,
+                scale = 0.8,
+                label = "Benny's Motorworks",
+            },
+            points = {
+                vec3(-203.55, -1311.26, 30.85),
+                vec3(-228.06, -1319.24, 30.85),
+                vec3(-228.25, -1334.25, 30.85),
+                vec3(-214.18, -1341.38, 30.85),
+                vec3(-195.42, -1321.19, 30.85),
+                vec3(-195.26, -1314.11, 30.85),
+            }
+        }
     },
 
     prices = {
