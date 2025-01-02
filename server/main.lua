@@ -1,4 +1,4 @@
-lib.versionCheck('Ybox-Project/y_customs')
+lib.versionCheck('ynot-workshop/y_customs')
 local sharedConfig = require 'config.shared'
 
 ---@return number

@@ -3,7 +3,7 @@ game 'gta5'
 
 author 'Jorn#0008 & Ynot'
 description 'y_customs'
-repository 'https://github.com/Ybox-Project/y_customs'
+repository 'https://github.com/ynot-workshop/y_customs'
 version '1.0.2'
 
 ox_lib 'locale'
